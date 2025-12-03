@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estilo de Vida que Emagrece - Patí Busato</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero">
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="https://assets.mixkit.co/videos/preview/mixkit-person-doing-fitness-exercises-1024.mp4" type="video/mp4">
+  </video>
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <h1>Emagreça de forma saudável e duradoura</h1>
+    <p>Transforme sua relação com a alimentação e alcance resultados reais com nosso método baseado em comportamento, psicologia e neurociência.</p>
+    <a href="https://kiwify.app/fS8Xmgz?afid=ESjJ3XqT" class="cta-button" target="_blank">Quero Transformar Minha Vida</a>
+  </div>
+</section>
+
+<!-- Benefícios -->
+<section class="benefits">
+  <h2>O que você vai conquistar</h2>
+  <div class="cards">
+    <div class="card">
+      <img src="https://www.svgrepo.com/show/13669/leaf.svg" alt="">
+      <h3>Hábitos Saudáveis</h3>
+      <p>Crie hábitos alimentares duradouros sem sofrimento.</p>
+    </div>
+    <div class="card">
+      <img src="https://www.svgrepo.com/show/303339/brain.svg" alt="">
+      <h3>Mentalidade de Sucesso</h3>
+      <p>Transforme sua mentalidade e alcance seus objetivos.</p>
+    </div>
+    <div class="card">
+      <img src="https://www.svgrepo.com/show/331980/target.svg" alt="">
+      <h3>Resultados Reais</h3>
+      <p>Emagreça de forma consciente, sem dietas malucas e efeito sanfona.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Depoimentos -->
+<section class="testimonials">
+  <h2>Depoimentos</h2>
+  <div class="slider">
+    <div class="testimonial active">
+      <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=500&q=80" alt="">
+      <p>"Seguindo o método da Patí, consegui emagrecer 8kg em 2 meses sem passar fome!" – Mariana S.</p>
+    </div>
+    <div class="testimonial">
+      <img src="https://images.unsplash.com/photo-1603415526960-fb6e7aa52f4b?auto=format&fit=crop&w=500&q=80" alt="">
+      <p>"Minha relação com a comida mudou completamente. Hoje me sinto mais confiante!" – Carlos T.</p>
+    </div>
+    <div class="testimonial">
+      <img src="https://images.unsplash.com/photo-1603415526910-c0f80289d9e5?auto=format&fit=crop&w=500&q=80" alt="">
+      <p>"A abordagem da Patí é única. Comportamento e mentalidade realmente fazem a diferença!" – Fernanda M.</p>
+    </div>
+  </div>
+  <div class="slider-controls">
+    <span class="active" data-index="0"></span>
+    <span data-index="1"></span>
+    <span data-index="2"></span>
+  </div>
+</section>
+
+<!-- Mentora -->
+<section class="mentor">
+  <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=500&q=80" alt="Patí Busato">
+  <div class="mentor-info">
+    <h2>Patí Busato</h2>
+    <p>Nutricionista, pós-graduada em comportamento alimentar, psicologia e neurociência. Ajudo você a emagrecer de forma consciente e duradoura.</p>
+    <a href="https://www.instagram.com/patibusato" target="_blank">@patibusato</a>
+  </div>
+</section>
+
+<!-- CTA Final -->
+<section class="final-cta">
+  <a href="https://kiwify.app/fS8Xmgz?afid=ESjJ3XqT" target="_blank">Comece Agora e Transforme Sua Vida!</a>
+</section>
+
+<footer>
+  LUXMIND TREINAMENTOS LTDA | CNPJ: 62.278.185/0001-58 | Suporte: suportepatriciabusato@gmail.com
+</footer>
+
+<script>
+const testimonials = document.querySelectorAll('.testimonial');
+const dots = document.querySelectorAll('.slider-controls span');
+let currentIndex = 0;
+function showSlide(index){
+  testimonials.forEach(t => t.classList.remove('active'));
+  dots.forEach(d => d.classList.remove('active'));
+  testimonials[index].classList.add('active');
+  dots[index].classList.add('active');
+}
+dots.forEach(dot => {
+  dot.addEventListener('click', ()=>{
+    currentIndex=parseInt(dot.getAttribute('data-index'));
+    showSlide(currentIndex);
+  });
+});
+setInterval(()=>{
+  currentIndex=(currentIndex+1)%testimonials.length;
+  showSlide(currentIndex);
+},5000);
+</script>
+
+</body>
+</html>
